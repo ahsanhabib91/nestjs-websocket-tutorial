@@ -3,10 +3,10 @@ import { Logger } from '@nestjs/common';
 import { Socket, Server } from 'socket.io';
 
 /**
- * Important URIs
- * https://docs.nestjs.com/websockets/gateways
- * https://socket.io/docs/server-api/
- * https://socket.io/docs/client-api/
+ *	Important URIs:
+ *	https://docs.nestjs.com/websockets/gateways
+ *	https://socket.io/docs/server-api/
+ *	https://socket.io/docs/client-api/
  */
 
 // @WebSocketGateway({serveClient: true})
