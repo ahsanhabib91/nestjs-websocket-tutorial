@@ -12,5 +12,5 @@ export class AlertController {
 		console.log(dto);
         this.alertGateway.sendToAll(dto.message);
         return dto;
-    }
+	}
 }
