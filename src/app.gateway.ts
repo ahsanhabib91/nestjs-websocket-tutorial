@@ -20,10 +20,12 @@ export class AppGateway implements OnGatewayInit, OnGatewayConnection, OnGateway
 		this.logger.log(`Client disconnected: ${client.id}`);
 	}
 
-	@SubscribeMessage('messageToServre')
+	@SubscribeMessage('msgToServer')
 	handleMessage(client: Socket, payload: any): WsResponse<string> {
-		// this.wss.emit('messageToClient', payload); // send data to every client
+		this.logger.log(`Message received for ${client.id}`);
+		this.logger.log(payload);
+		this.wss.emit('msgToClient', payload); // send data to every client
 		// client.emit('messageToClient', payload); // send data to client socket only
-		return { event: 'messageToClient', data: payload }; // send data to client socket only
+		return { event: 'msgToClient', data: payload }; // send data to client socket only
 	}
 }
