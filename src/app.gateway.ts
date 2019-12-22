@@ -10,7 +10,7 @@ import { Socket, Server } from 'socket.io';
  */
 
 // @WebSocketGateway({serveClient: true})
-@WebSocketGateway()
+@WebSocketGateway({namespace: 'app'})
 export class AppGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
 	
 	private logger: Logger = new Logger('AppGateway');
